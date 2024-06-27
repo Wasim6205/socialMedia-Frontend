@@ -1,0 +1,1 @@
+export const baseUrl = `https://socialmedia-jan8.onrender.com`
