@@ -28,7 +28,7 @@ const Register = () => {
       storeUsernameInLS(res.data.data.username)
       toast.success(res.data.msg);
       storeTokenInLS(res.data.token)
-      navigate("/")
+      navigate("/login")
     } catch (error) {
       toast.error(error.response.data.msg);
     }
