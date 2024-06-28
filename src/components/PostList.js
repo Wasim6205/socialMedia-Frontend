@@ -46,9 +46,10 @@ const PostList = () => {
   const deletePost = async (id) => {
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`{baseUrl}/api/posts/delete/${id}`, {
+      await axios.delete(`${baseUrl}/api/posts/delete/${id}`, {
         headers: { Authorization: token },
       });
+      toast.success("post deleted")
       fetchPosts();
     } catch (error) {
       console.log(error);
@@ -76,10 +77,11 @@ const PostList = () => {
             </button>
           </div>
 
-          <div className="mt-10">
-          <h1 className="text-center text-3xl font-medium mb-6 border-b-[2px] border-green-500">All Posts</h1>
+          <div className="mt-10 px-8">
+          <h1 className="text-center w-[50%] mx-auto text-3xl font-medium mb-6 border-b-[2px] border-green-500">All Posts</h1>
+            <div className="p-8">
             {posts.map((post) => (
-              <div key={post._id} className="flex flex-col gap-4 p-4 bg-black mt-2">
+              <div key={post._id} className="flex flex-col gap-4 p-4 bg-black mt-2 sm:mx-4 md:mx-0">
                 <div className="flex justify-between">
                   <p className="text-xl font-medium text-green-500">{post.content}</p>
                   <button
@@ -94,6 +96,7 @@ const PostList = () => {
                 </div>
               </div>
             ))}
+            </div>
           </div>
         </div>
       ) : (

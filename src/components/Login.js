@@ -36,7 +36,7 @@ const Login = () => {
     <div className="flex bg-slate-800 text-gray-300 h-screen items-center justify-center">
       <form
         onSubmit={handleSubmit}
-        className="border border-white flex flex-col px-6 py-2 rounded-md space-y-3 w-96"
+        className="border border-white flex flex-col mx-8 md:mx-0 px-6 py-2 rounded-md space-y-3 w-96"
       >
         <label className="input input-bordered bg-slate-800 border-gray-300 flex items-center gap-2">
           <svg
